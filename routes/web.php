@@ -15,12 +15,12 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'StockController@allStock')->name('home');
 
 Route::group(["middleware" => "auth"], function (){
 
     //Home
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'StockController@allStock');
 
     //siteSettings
     Route::get('/siteSetting', 'AdminController@siteSetting');
